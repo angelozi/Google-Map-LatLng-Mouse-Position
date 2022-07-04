@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Hamide Yüce">
+    <title>Calculating latitude and longitude on mouse position the map</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-2 text-center">
+        <h2>Google Map</h2>
+        <p class="lead">Calculating latitude and longitude on mouse position the map</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Mouse Coordinate</span>
+            </h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">Latitude </h6>
+                        <small class="text-muted">the left coordinate in google maps</small>
+                    </div>
+                    <span class="text-muted" id="mouse-lat">..</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">Longitude</h6>
+                        <small class="text-muted">the top coordinate in google maps</small>
+                    </div>
+                    <span class="text-muted" id="mouse-lng">..</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">X</h6>
+                        <small class="text-muted">the left coordinate in pixels.</small>
+                    </div>
+                    <span class="text-muted" id="mouse-pixel-x">..</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">Y</h6>
+                        <small class="text-muted">the top coordinate in pixels.</small>
+                    </div>
+                    <span class="text-muted" id="mouse-pixel-y">..</span>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Map</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control w-50" id="searchText" placeholder="Turkey, Ankara..." autocomplete="off">
+                        <select id="searchZoom" class="custom-select">
+                            <option selected>Zoom</option>
+                            <option value="1">1: World</option>
+                            <option selected value="5">5: Landmass</option>
+                            <option value="10">10: City</option>
+                            <option value="15">15: Streets</option>
+                            <option value="20">20: Buildings</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img id="mapImage" class="img-fluid" alt="map-Image" src="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="my-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2019 Hamide Yüce</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://github.com/angelozi">GitHub</a></li>
+            <li class="list-inline-item"><a href="https://www.linkedin.com/in/hamideyuce">Linkedin</a></li>
+            <li class="list-inline-item"><a href="https://getbootstrap.com/">Theme Bootstrap</a></li>
+        </ul>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.3/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
