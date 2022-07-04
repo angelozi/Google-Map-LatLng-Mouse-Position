@@ -81,15 +81,20 @@ $( document ).ready(function() {
     }
 
     function getMap(){
-        var staticMap = 'https://maps.googleapis.com/maps/api/staticmap?center='+address+'&zoom='+mapZoom+'&size='+mapWidth+'x'+mapHeight+'&maptype=roadmap&key='+googleKey;
-        var addressGeocode = 'https://maps.googleapis.com/maps/api/geocode/json?&address='+address+'&key='+googleKey;
+        if(address) {
 
-        $.getJSON( addressGeocode, function( data ) {
-            mapCenterLat = data.results[0].geometry.location.lat;
-            mapCenterLng = data.results[0].geometry.location.lng;
-            mapImage.attr('src' ,staticMap );
-            mapImage.css('cursor' , 'crosshair' );
-        });
+            var staticMap = 'https://maps.googleapis.com/maps/api/staticmap?center='+address+'&zoom='+mapZoom+'&size='+mapWidth+'x'+mapHeight+'&maptype=roadmap&key='+googleKey;
+            var addressGeocode = 'https://maps.googleapis.com/maps/api/geocode/json?&address='+address+'&key='+googleKey;
+
+            $.getJSON(addressGeocode, function (data) {
+                if (data.status == 'OK') {
+                    mapCenterLat = data.results[0].geometry.location.lat;
+                    mapCenterLng = data.results[0].geometry.location.lng;
+                    mapImage.attr('src', staticMap);
+                    mapImage.css('cursor', 'crosshair');
+                }
+            });
+        }
     }
 
 });
